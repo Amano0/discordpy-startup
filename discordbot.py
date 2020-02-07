@@ -58,7 +58,7 @@ async def on_ready():
     amano = client.get_user(446610711230152706)
     await amano.send(datetime.now(JST).strftime("%Y/%m/%d %H:%M:%S"))
     print(datetime.now(JST).strftime("%Y/%m/%d %H:%M:%S"))
-    loop.start()
+    #loop.start()
 
 @client.event
 async def on_message(message):
@@ -82,13 +82,12 @@ async def on_message(message):
     if not atk_num== 0:
         sent = f"\n**現在ノ討伐数**：`{m_num}`\n**停止検知回数**：`{stop_num}`\n**死亡復活回数：**`{revive_num}`\n**総ダメージ数：**`{all_damage}`\n**単発平均火力：**`{(round((all_damage)/(atk_num)))}`\n**総獲得経験値：**`{all_exp}`"
 
-
-    if message.content=='a)stop' and test_flag==True and message.author==me:
+    if message.content=='a))stop' and test_flag==True and message.author==me:
         test_flag=False
         test_ch=None
         await message.channel.send(f'**__Auto Battle System Stop__**\n**戦闘開始時刻**：{start_time}\n**総合敵討伐数**：{m_num}\n**停止検知回数**：{stop_num}\n**死亡復活回数**：{revive_num}')
         
-    if message.content.startswith("a)start") and message.author==me:
+    if message.content.startswith("a))start") and message.author==me:
         test_flag = True
         test_ch = message.channel
         start_time = datetime.now(JST).strftime("%Y/%m/%d %H:%M:%S")
