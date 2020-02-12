@@ -891,15 +891,17 @@ async def on_message(message):
 
     if message.channel == test_ch and message.embeds and test_flag==True:
         if message.embeds[0].title and 'が待ち構えている' in message.embeds[0].title:
+            lv=message.embeds[0].title.split('Lv.')[1].split(' ')[0]
+            type=message.embeds[0].title.split('[')[1].split(']')[0]
+            rank=message.embeds[0].title.split('【')[1].split('】')[0]
+            name=message.embeds[0].title.split('】')[1].split('が待ち構えている')[0]
+            image_url=message.embeds[0].image.url
+            hp=message.embeds[0].title.split(':')[3]
             if test_ch.id==659917177599819809:
 
-                lv=message.embeds[0].title.split('Lv.')[1].split(' ')[0]
-                type=message.embeds[0].title.split('[')[1].split(']')[0]
-                rank=message.embeds[0].title.split('【')[1].split('】')[0]
-                name=message.embeds[0].title.split('】')[1].split('が待ち構えている')[0]
-                image_url=message.embeds[0].image.url
-                hp=message.embeds[0].title.split(':')[3]
 
+
+                """
                 logch=client.get_channel(659965763050012703)
                 await test_ch.edit(name=f'┃honpen┃lv.{lv}')
                 exp=int(lv)
@@ -916,6 +918,7 @@ async def on_message(message):
                 embed.set_thumbnail(url=image_url)
                 embed.set_footer(text = datetime.now(JST))
                 await logch.send(embed=embed)
+                """
                 
             elif test_ch.id == 659336616359231509:
                 lv=message.embeds[0].title.split('Lv.')[1].split(' ')[0]
