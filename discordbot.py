@@ -124,7 +124,7 @@ async def on_message(message):
         chid = int(message.content.split("#")[1])
         msg = message.content.split("#")[2]
         ch = client.get_channel(chid)
-        await ch.send(msg)
+        await ch.send(embed = discord.embed(description = msg))
     if 1 == 1:
         global m_num
         global stop_num
