@@ -119,7 +119,7 @@ async def loop():
 
 @client.event
 async def on_message(message):
-    if message.content.startswiht("a)msg#"):
+    if message.content.startswith("a)msg#"):
         await message.delete()
         chid = int(message.content.split("#")[1])
         msg = message.content.split("#")[2]
